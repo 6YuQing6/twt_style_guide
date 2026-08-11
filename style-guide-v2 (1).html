@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TasteWithoutTrouble &mdash; style guide v2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    @font-face{
+    font-family:'Matcha Mint';
+    src: url('Matcha_Mint.otf') format('opentype'),
+         url('Matcha_Mint.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+  }
+
+  @font-face{
+    font-family:'Simply Rounded';
+    src: url('Tommy_Soft_Regular.otf') format('opentype');
+    font-weight:normal;
+    font-style:normal;
+  }
+
+  :root{
+    --cream:#FFFBF0;
+    --white:#fffdf7;
+    --moss:#8FAE5D;
+    --moss-light: rgb(176, 214, 114);
+    --moss-deep:#7FA34D;
+    --butter:#fff8c7;
+    --butter-deep:#C9A227;
+    --blue:#CBE6F0;
+    --blue-deep:#6FA8C0;
+    --maroon:#5B4636;
+    --teal:#8FAE5D;
+    --teal-deep:#4F6B34;
+    --ink:#3E2F22;
+    --line:#e2ddbee0;
+
+    --font-size-base:24px;
+    --font-size-pill:12px;
+    --font-body:'Simply Rounded', sans-serif;
+
+    --r-pill:999px;
+    --r-card:14px;
+    --r-input:10px;
+    --r-sm:8px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:var(--font-body); font-size:var(--font-size-base); line-height:1.6;}
+  h1,h2,h3{letter-spacing:0.02em; font-family:'Matcha Mint', sans-serif; margin:0; color:var(--maroon);}
+  .wrap{max-width:960px; margin:0 auto; padding:0 32px 120px;}
+  .label{font-size:12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--moss);}
+
+  /* ---- hero ---- */
+  .hero{
+    background-color:var(--moss-deep);
+    background-image:radial-gradient(var(--moss) 2px, transparent 2px);
+    background-size:22px 22px;
+    color:var(--cream); padding:56px 32px;
+    border-bottom: var(--moss-light) 12px solid;
+  }
+  .hero .eyebrow{font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--cream); margin-bottom:14px; display:block;}
+  .hero h1{font-size:clamp(34px,5vw,52px); font-weight:700; color:var(--cream);}
+  .hero p{max-width:560px; margin-top:14px; color:var(--cream); font-size:calc(var(--font-size-base) - 7.5px);}
+  .revision-note{
+    margin-top:22px; display:inline-flex; gap:8px; align-items:center;
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25);
+    border-radius:var(--r-sm); padding:8px 14px; font-size:12.5px; color:#EDEFE0;
+  }
+
+  section{margin-top:64px;}
+  .section-head{margin-bottom:10px;}
+  .section-head h2{font-size:26px; font-weight:700; margin-top:4px;}
+  .section-intro{color:#5B4C3E; max-width:620px; margin-bottom:28px; font-size:calc(var(--font-size-base) - 8.5px);}
+
+  /* ---- palette ---- */
+  .palette-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px;}
+  .swatch{box-shadow: 0px 2px 0.2rem var(--line); border-radius:var(--r-card); padding:18px 16px; min-height:100px; display:flex; flex-direction:column; justify-content:flex-end;}
+  .swatch .name{font-family:'Matcha Mint', 'Baloo 2', sans-serif; font-weight:600; font-size:14.5px;}
+  .swatch .hex{font-size:11.5px; opacity:0.85; margin-top:2px;}
+  .palette-note{margin-top:16px; font-size:calc(var(--font-size-base) - 10px); color:#8A7C64;}
+
+  /* ---- type specimen ---- */
+  .type-card{box-shadow: 0px 2px 0.2rem var(--line); background:var(--white); border-radius:var(--r-card); padding:24px 26px; margin-bottom:14px;}
+  .type-card .role{font-size:11.5px; color:var(--teal-deep); margin-bottom:10px; display:block;}
+  .type-card .sample-display{font-family:'Matcha Mint', 'Baloo 2', sans-serif; font-weight:700; font-size:34px; color:var(--ink); line-height:1.15;}
+  .type-card .sample-body{font-weight:400; font-size:calc(var(--font-size-base) - 7.5px); color:#3F3428; max-width:560px;}
+  .type-card .sample-mono{font-size:12.5px; letter-spacing:0.04em; text-transform:uppercase; background:var(--moss); color:var(--white); display:inline-block; padding:6px 12px; border-radius:var(--r-sm);}
+  
+  /* ---- radius scale ---- */
+  .radius-row{display:flex; gap:18px; flex-wrap:wrap; align-items:flex-end;}
+  .r-demo{ background:var(--white); box-shadow: 0px 2px 0.2rem var(--line);  display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--moss); text-align:center;}
+  .r-demo.pill{width:150px; height:44px; border-radius:var(--r-pill); font-size:var(--font-size-pill);}
+  .r-demo.pill.primary{background:var(--blue); color:var(--white); border-color: var(--blue-deep); color: var(--blue-deep)}
+  .r-demo.pill.secondary{background:var(--butter); color:var(--butter-deep); border-color: var(--butter-deep);}
+  .r-demo.card{width:120px; height:80px; border-radius:var(--r-card);}
+  .r-demo.input{width:150px; height:44px; border-radius:var(--r-input);}
+  .r-demo.sm{width:80px; height:44px; border-radius:var(--r-sm);}
+  .radius-caption{margin-top:24px; font-size:calc(var(--font-size-base) - 10px); color:#5B4C3E;}
+
+  /* ---- recipe card anatomy ---- */
+  .card-anatomy{display:grid; grid-template-columns:280px 1fr; gap:32px; align-items:center;}
+  .recipe-card{box-shadow: 0px 2px 0.2rem var(--line); background:var(--white); border-radius:var(--r-card); overflow:hidden;}
+  .card-photo{position:relative; height:170px;}
+  .card-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .bookmark-btn{
+    position:absolute; top:10px; right:10px; width:32px; height:32px;
+    background:var(--white); border-radius:var(--r-sm); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-size:14px;
+  }
+  .tag-strip{display:flex; gap:8px; flex-wrap:wrap; background:transparent; padding:10px 14px 0;}
+  .tag-strip span{font-size:var(--font-size-pill); letter-spacing:0.03em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r-pill); border:1px solid var(--butter-deep); background:var(--butter); color:var(--butter-deep); margin-right:0;}
+  .tag-strip span:nth-child(2){border-color:var(--blue-deep); background:var(--blue); color:var(--blue-deep);}
+  .card-content{padding:14px 16px 16px;}
+  .card-content h3{font-size:16px; font-weight:600; margin-bottom:4px;}
+  .card-content .byline{font-size:calc(var(--font-size-base) - 11px); color:#8A7C64; margin-bottom:10px;}
+  .card-content .meta-row{display:flex; align-items:center; justify-content:space-between; font-size:calc(var(--font-size-base) - 11px); color:#5B4C3E;}
+  .card-content .meta-row .like{color:var(--blue-deep); display:flex; align-items:center; gap:4px;}
+
+  .anatomy-notes{display:flex; flex-direction:column; gap:16px;}
+  .anatomy-note{display:flex; gap:12px;}
+  .anatomy-note .num{
+    width:26px; height:26px; border-radius:50%; background:var(--butter); color:var(--moss-deep);
+    font-size:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .anatomy-note p{margin:0; font-size:calc(var(--font-size-base) - 9.5px); color:#3F3428;}
+  .anatomy-note b{font-family:'Matcha Mint', 'Baloo 2', sans-serif; font-weight:600; font-size:14.5px;}
+
+  /* ---- tag strip color key ---- */
+  .tagkey-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
+  .tagkey{display:flex; align-items:center; gap:8px; font-size:var(--font-size-pill); background:var(--white); border:1px solid var(--line); border-radius:var(--r-pill); padding:6px 14px 6px 6px;}
+  .tagkey .dot{width:18px; height:18px; border-radius:5px;}
+
+  /* ---- component row: search + filter chips ---- */
+  .mini-search{box-shadow: 0px 2px 0.2rem var(--line); display:flex; align-items:center; gap:10px; background:var(--white); border-radius:var(--r-input); padding:12px 16px; margin-bottom:14px; max-width:520px;}
+  .mini-search input{border:none; outline:none; font-size:calc(var(--font-size-base) - 9.5px); flex:1; color:var(--ink);}
+  .chip-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .chip{font-size:var(--font-size-pill); text-transform:uppercase; letter-spacing:0.02em; padding:8px 16px; border-radius:var(--r-pill); border:1px solid var(--butter-deep); background:var(--butter); color:var(--butter-deep);}
+  .chip.active{background:var(--blue); border-color:var(--blue-deep); color:var(--blue-deep);}
+
+  /* ---- do/dont ---- */
+  .dd-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .dd-card{box-shadow: 0px 2px 0.2rem var(--line); border-radius:var(--r-card); padding:22px 24px;}
+  .dd-card.do{background:#EEF3E5;}
+  .dd-card.dont{background:#F7E8E3;}
+  .dd-card .tag{font-family:'Matcha Mint', 'Baloo 2', sans-serif; font-weight:600; font-size:14.5px; margin-bottom:10px; display:block;}
+  .dd-card.do .tag{color:var(--moss-deep);}
+  .dd-card.dont .tag{color:#8C3B2A;}
+  .dd-card ul{margin:0; padding-left:18px; font-size:calc(var(--font-size-base) - 10px); color:#3F3428;}
+  .dd-card li{margin-bottom:6px;}
+
+  footer{text-align:center; margin-top:70px; font-size:12px; color:#9C8E76;}
+
+  @media (max-width:640px){
+    .card-anatomy{grid-template-columns:1fr;}
+    .dd-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap" style="padding-bottom:0;">
+    <span class="eyebrow">style guide &middot; revision 2</span>
+    <h1>TasteWithoutTrouble</h1>
+    <p>Same warm, condition-aware palette &mdash; rebuilt for trust. Real photography, tighter corners, and quieter type so the site reads as a credible health resource, not a scrapbook.</p>
+    <div class="revision-note">&#8635; evolved from the illustrated moodboard direction &mdash; see what changed below</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <div class="section-head">
+      <span class="label">01</span>
+      <h2>color palette &mdash; unchanged</h2>
+    </div>
+    <p class="section-intro">Recolored to sit closer to the soft, storybook-green reference: warm cream and white still hold the structural weight (headers, surfaces), while matcha green, butter yellow, sky blue, and cocoa brown handle accents, tag strips, and highlights.</p>
+    <div class="palette-grid">
+      <div class="swatch" style="background:var(--cream);"><div class="name">paper cream</div><div class="hex">#FFFBF0</div></div>
+      <div class="swatch" style="background:var(--white);"><div class="name">card white</div><div class="hex">#FFFFFF</div></div>
+      <div class="swatch" style="background:var(--moss); color:var(--white);"><div class="name">matcha green</div><div class="hex">#7FA34D</div></div>
+      <div class="swatch" style="background:var(--butter); color:var(--butter-deep);"><div class="name">butter pop</div><div class="hex">#F5EFC2</div></div>
+      <div class="swatch" style="background:var(--blue); color:var(--maroon);"><div class="name">sky blue</div><div class="hex">#CBE6F0</div></div>
+      <div class="swatch" style="background:var(--blue-deep); color:var(--white);"><div class="name">dusty sky</div><div class="hex">#6FA8C0</div></div>
+      <div class="swatch" style="background:var(--maroon); color:var(--blue);"><div class="name">cocoa brown</div><div class="hex">#5B4636</div></div>
+      <div class="swatch" style="background:var(--teal); color:#2E401D;"><div class="name">clover</div><div class="hex">#8FAE5D</div></div>
+    </div>
+    <p class="palette-note">New: a soft matcha-and-butter pairing replaces the old moss/butter combo, with a pale sky blue standing in for blue &mdash; closer to the clover-and-plaid reference while keeping the same structural roles.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="label">02</span>
+      <h2>typography</h2>
+    </div>
+    <p class="section-intro">Baloo 2 stays on headings after all &mdash; dialed back to weight 600&ndash;700 (not the moodboard's 800) and used at more restrained sizes, so its rounded warmth still comes through without tipping back into playful. Everything else about the professional shift &mdash; photography, tighter corners, hairline borders &mdash; holds.</p>
+
+    <div class="type-card">
+      <span class="role">display &mdash; Baloo 2, 600/700</span>
+      <div class="sample-display">Recipe hub</div>
+    </div>
+    <div class="type-card">
+      <span class="role">body &mdash; Nunito Sans, 400/600 (unchanged)</span>
+      <div class="sample-body">Every recipe is tagged by allergen and condition, so you can trust what you're making instead of triple-checking every label.</div>
+    </div>
+    <div class="type-card">
+      <span class="role">label &mdash; Space Mono, uppercase, tracked (unchanged role, now also used for tag strips)</span>
+      <span class="sample-mono">gluten-free &middot; ibs-friendly</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="label">03</span>
+      <h2>corner radius scale &mdash; the big change</h2>
+    </div>
+    <p class="section-intro">This is the main structural shift. Everything moves down one or two steps: cards go from 20&ndash;36px down to 14px, inputs to 10px, and small controls to 8px. Only pills (buttons, filter chips, tags) stay fully rounded &mdash; that contrast is what keeps it from feeling stiff.</p>
+    <div class="radius-row">
+      <div>
+        <div class="r-demo pill primary">pill &middot; 999px</div>
+        <div class="radius-caption">buttons, filter chips</div>
+      </div>
+      <div>
+        <div class="r-demo pill secondary">pill &middot; 999px</div>
+        <div class="radius-caption">buttons, filter chips</div>
+      </div>
+      <div>
+        <div class="r-demo card">card &middot; 14px</div>
+        <div class="radius-caption">recipe cards, panels</div>
+      </div>
+      <div>
+        <div class="r-demo input">input &middot; 10px</div>
+        <div class="radius-caption">search bars</div>
+      </div>
+      <div>
+        <div class="r-demo sm">sm &middot; 8px</div>
+        <div class="radius-caption">icon buttons, badges</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="label">04</span>
+      <h2>recipe card anatomy</h2>
+    </div>
+    <p class="section-intro">The biggest content change: real photography replaces the illustrated color-block covers. A colored tag strip sits directly under the photo &mdash; the color signals the primary dietary category at a glance, before you read a single word.</p>
+
+    <div class="card-anatomy">
+      <div class="recipe-card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=60" alt="grain bowl with avocado and vegetables">
+          <div class="bookmark-btn">&#128278;</div>
+        </div>
+        <div class="tag-strip"><span>gluten-free</span><span>ibs-friendly</span></div>
+        <div class="card-content">
+          <h3>zucchini noodles with avocado pesto</h3>
+          <div class="byline">by Maya C.</div>
+          <div class="meta-row">
+            <span>&#128337; 25 min</span>
+            <span class="like">&#9825; 342</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="anatomy-notes">
+        <div class="anatomy-note"><span class="num">1</span><p><b>Photo, not illustration.</b> Real, cropped 16:10 photography. No more hand-drawn covers &mdash; this is the single biggest trust signal for a health-adjacent site.</p></div>
+        <div class="anatomy-note"><span class="num">2</span><p><b>Bookmark replaces the character-doodle save icon.</b> A plain outline bookmark in a small square button, top-right, overlapping the photo.</p></div>
+        <div class="anatomy-note"><span class="num">3</span><p><b>Tag strip encodes meaning by color</b>, not just text &mdash; see the key below.</p></div>
+        <div class="anatomy-note"><span class="num">4</span><p><b>14px card radius</b> instead of 20&ndash;36px. The photo's top corners match the card radius; nothing about the card competes with the photo for attention.</p></div>
+      </div>
+    </div>
+
+    <div class="tagkey-row">
+      <div class="tagkey"><span class="dot" style="background:var(--moss);"></span>moss &mdash; condition-safe (IBS, Crohn's, celiac)</div>
+      <div class="tagkey"><span class="dot" style="background:var(--blue-deep);"></span>terracotta &mdash; elimination diets (FODMAP, dairy-free)</div>
+      <div class="tagkey"><span class="dot" style="background:var(--maroon);"></span>maroon &mdash; allergen-free (nut, egg, gluten)</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="label">05</span>
+      <h2>search &amp; filter components</h2>
+    </div>
+    <p class="section-intro">Same pill-shaped filter chips as before, tightened up: solid moss fill for the active state, thin hairline borders instead of thick 2px outlines, no dashed borders anywhere &mdash; those read as scrapbook, not toolbar.</p>
+    <div class="mini-search"><span>&#128269;</span><input type="text" placeholder="search recipes, ingredients, conditions..."></div>
+    <div class="chip-row">
+      <span class="chip active">all</span>
+      <span class="chip">gluten-free</span>
+      <span class="chip">dairy-free</span>
+      <span class="chip">low fodmap</span>
+      <span class="chip">nut-free</span>
+      <span class="chip">vegan</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="label">06</span>
+      <h2>do / don't</h2>
+    </div>
+    <div class="dd-grid">
+      <div class="dd-card do">
+        <span class="tag">&#10003; lean into</span>
+        <ul>
+          <li>Real, warm, appetizing food photography</li>
+          <li>Colored tag strips that encode category at a glance</li>
+          <li>Hairline 1px borders over thick 2px outlines</li>
+          <li>Pill-shaped controls against otherwise square-cornered cards</li>
+        </ul>
+      </div>
+      <div class="dd-card dont">
+        <span class="tag">&#10005; avoid</span>
+        <ul>
+          <li>Hand-drawn character mascots or emoji covers</li>
+          <li>Dashed / dotted borders</li>
+          <li>Card radius above 16px</li>
+          <li>Tilted or "collaged" card rotation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>TasteWithoutTrouble &middot; style guide v2 &mdash; professional / photo-based direction</footer>
+
+</body>
+</html>
