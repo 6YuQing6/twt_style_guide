@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TasteWithoutTrouble &mdash; style guide v2</title>
+<title>Taste Without Trouble &mdash; style guide v2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
     --moss-light: rgb(176, 214, 114);
     --moss-deep:#7FA34D;
     --butter:#fff8c7;
-    --butter-deep:#C9A227;
+    --butter-deep:#dfb52b;
     --blue:#CBE6F0;
     --blue-deep:#6FA8C0;
     --maroon:#5B4636;
@@ -94,7 +94,7 @@
   .radius-row{display:flex; gap:18px; flex-wrap:wrap; align-items:flex-end;}
   .r-demo{ background:var(--white); box-shadow: 0px 2px 0.2rem var(--line);  display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--moss); text-align:center;}
   .r-demo.pill{width:150px; height:44px; border-radius:var(--r-pill); font-size:var(--font-size-pill);}
-  .r-demo.pill.primary{background:var(--blue); color:var(--white); border-color: var(--blue-deep); color: var(--blue-deep)}
+  .r-demo.pill.primary{background:var(--blue); color:var(--white); border-color: var(--blue); color: var(--cream)}
   .r-demo.pill.secondary{background:var(--butter); color:var(--butter-deep); border-color: var(--butter-deep);}
   .r-demo.card{width:120px; height:80px; border-radius:var(--r-card);}
   .r-demo.input{width:150px; height:44px; border-radius:var(--r-input);}
@@ -112,13 +112,13 @@
     display:flex; align-items:center; justify-content:center; font-size:14px;
   }
   .tag-strip{display:flex; gap:8px; flex-wrap:wrap; background:transparent; padding:10px 14px 0;}
-  .tag-strip span{font-size:var(--font-size-pill); letter-spacing:0.03em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r-pill); border:1px solid var(--butter-deep); background:var(--butter); color:var(--butter-deep); margin-right:0;}
-  .tag-strip span:nth-child(2){border-color:var(--blue-deep); background:var(--blue); color:var(--blue-deep);}
+  .tag-strip span{font-size:var(--font-size-pill); letter-spacing:0.03em; text-transform:uppercase; padding:6px 14px; border-radius:var(--r-pill); border:1px solid var(--butter-deep); background:var(--butter-deep); color:var(--cream); margin-right:0;}
+  .tag-strip span:nth-child(2){border-color:var(--blue); background:var(--blue-deep); color:var(--cream);}
   .card-content{padding:14px 16px 16px;}
   .card-content h3{font-size:16px; font-weight:600; margin-bottom:4px;}
   .card-content .byline{font-size:calc(var(--font-size-base) - 11px); color:#8A7C64; margin-bottom:10px;}
   .card-content .meta-row{display:flex; align-items:center; justify-content:space-between; font-size:calc(var(--font-size-base) - 11px); color:#5B4C3E;}
-  .card-content .meta-row .like{color:var(--blue-deep); display:flex; align-items:center; gap:4px;}
+  .card-content .meta-row .like{color:var(--moss-deep); display:flex; align-items:center; gap:4px;}
 
   .anatomy-notes{display:flex; flex-direction:column; gap:16px;}
   .anatomy-note{display:flex; gap:12px;}
@@ -138,8 +138,8 @@
   .mini-search{box-shadow: 0px 2px 0.2rem var(--line); display:flex; align-items:center; gap:10px; background:var(--white); border-radius:var(--r-input); padding:12px 16px; margin-bottom:14px; max-width:520px;}
   .mini-search input{border:none; outline:none; font-size:calc(var(--font-size-base) - 9.5px); flex:1; color:var(--ink);}
   .chip-row{display:flex; gap:8px; flex-wrap:wrap;}
-  .chip{font-size:var(--font-size-pill); text-transform:uppercase; letter-spacing:0.02em; padding:8px 16px; border-radius:var(--r-pill); border:1px solid var(--butter-deep); background:var(--butter); color:var(--butter-deep);}
-  .chip.active{background:var(--blue); border-color:var(--blue-deep); color:var(--blue-deep);}
+  .chip{font-size:var(--font-size-pill); text-transform:uppercase; letter-spacing:0.02em; padding:8px 16px; border-radius:var(--r-pill); border:1px solid var(--moss-deep); background:var(--moss); color:var(--cream);}
+  .chip.active{background:var(--teal-deep); border-color:var(--teal-deep); color:var(--cream);}
 
   /* ---- do/dont ---- */
   .dd-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
@@ -165,9 +165,9 @@
 <div class="hero">
   <div class="wrap" style="padding-bottom:0;">
     <span class="eyebrow">style guide &middot; revision 2</span>
-    <h1>TasteWithoutTrouble</h1>
-    <p>Same warm, condition-aware palette &mdash; rebuilt for trust. Real photography, tighter corners, and quieter type so the site reads as a credible health resource, not a scrapbook.</p>
-    <div class="revision-note">&#8635; evolved from the illustrated moodboard direction &mdash; see what changed below</div>
+    <h1>Taste Without Trouble</h1>
+    <p>Insert website description here.  &mdash; (objective 1), (objective 2), (objective 3), websote features.</p>
+    <div class="revision-note">&#8635; sign-up instructions go here. &mdash; or put catchy slogan here. Or click here to sign up</div>
   </div>
 </div>
 
@@ -276,7 +276,7 @@
     </div>
 
     <div class="tagkey-row">
-      <div class="tagkey"><span class="dot" style="background:var(--moss);"></span>moss &mdash; condition-safe (IBS, Crohn's, celiac)</div>
+      <div class="tagkey"><span class="dot" style="background:var(--butter-deep);"></span>butterdeep &mdash; condition-safe (IBS, Crohn's, celiac)</div>
       <div class="tagkey"><span class="dot" style="background:var(--blue-deep);"></span>terracotta &mdash; elimination diets (FODMAP, dairy-free)</div>
       <div class="tagkey"><span class="dot" style="background:var(--maroon);"></span>maroon &mdash; allergen-free (nut, egg, gluten)</div>
     </div>
